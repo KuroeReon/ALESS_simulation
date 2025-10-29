@@ -48,4 +48,8 @@ def derivative(state, config):
     force_y = lift_force * np.cos(angle_of_attack(state)) + drag * np.sin(angle_of_attack(state)) - config.mass + config.gravity
     d_velocity_x = force_x / config.mass
     d_velocity_y = force_y / config.mass
+<<<<<<< HEAD
     return State(d_velocity_y, d_velocity_x)
+=======
+    return State(d_velocity_y, d_velocity_x)
+>>>>>>> practice

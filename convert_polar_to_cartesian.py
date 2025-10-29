@@ -1,5 +1,5 @@
 import numpy as np
-from derivative import Velocity
+from derivative_velocity import Velocity
 
 class Velocity_polar:
     def __init__(self, speed, angle_of_attack):

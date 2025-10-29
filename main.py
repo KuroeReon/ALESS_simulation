@@ -1,4 +1,4 @@
 def main():
-    return 1
+    return 0
 
 main()

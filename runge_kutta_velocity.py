@@ -1,6 +1,4 @@
-#Runge-Kutta法による常微分方程式の数値解析
-
-def runge_kutta(derivative, state, config, dt):    
+def runge_kutta_velocity(derivative, state, config, dt):    
     k1 = derivative(state, config)
     k2 = derivative(state + k1 * dt / 2, config)
     k3 = derivative(state + k2 * dt / 2, config)

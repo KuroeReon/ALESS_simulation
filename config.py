@@ -11,5 +11,7 @@ class Config:
     mass: float
     ini_speed: float
     ini_angle_of_attack: float
+    max_t: float
+    dt: float
 
     

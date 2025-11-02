@@ -1,8 +1,10 @@
-import matplotlib as plt
+import matplotlib.pyplot as plt
 from read_config import read_config
+from velocity_simulation import run_velocity_simulation
+from position_simulation import run_position_simulation
 
 def make_graph(velocities, positions):
-    times = [i * read_config.dt for i in range(len(velocities))]
+    times = [i * read_config().dt for i in range(len(velocities))]
 
     plt.figure(figsize=(10, 6))
 
@@ -22,3 +24,5 @@ def make_graph(velocities, positions):
     plt.legend()
     
     plt.show()
+
+make_graph(run_velocity_simulation(), run_position_simulation())

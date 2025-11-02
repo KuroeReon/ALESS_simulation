@@ -6,7 +6,7 @@ class Velocity_polar:
         self.speed = speed
         self.angle_of_attack = angle_of_attack
 
-def covert_polar_velocity_to_cartesian(velocity_polar):
+def convert_polar_velocity_to_cartesian(velocity_polar):
     velocity_x = velocity_polar.speed * np.cos(velocity_polar.angle_of_attack)
     velocity_y = velocity_polar.speed * np.sin(velocity_polar.angle_of_attack)
     return Velocity(velocity_x, velocity_y)

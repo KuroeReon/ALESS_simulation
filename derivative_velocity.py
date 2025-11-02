@@ -36,10 +36,8 @@ def drag(velocity, config):
     return 0.5 * config.air_density * (np.linalg.norm(velocity_vector(velocity)) ** 2) * config.cross_sectional_area * config.drag_coefficient
 
 def derivative_velocity(velocity, config):
-    angle_of_attack = np.arctan(velocity.velocity_y / velocity.velocity_x)
-    force_x = - lift_force(velocity, config) * np.sin(angle_of_attack) - drag(velocity, config) * np.cos(angle_of_attack(velocity))
-    force_y = lift_force(velocity, config) * np.cos(angle_of_attack) + drag(velocity, config) * np.sin(angle_of_attack(velocity)) - config.mass * config.gravity
+    force_x = - lift_force(velocity, config) * np.sin(angle_of_attack(velocity)) - drag(velocity, config) * np.cos(angle_of_attack(velocity))
+    force_y = lift_force(velocity, config) * np.cos(angle_of_attack(velocity)) - drag(velocity, config) * np.sin(angle_of_attack(velocity)) - config.mass * config.gravity
     d_velocity_x = force_x / config.mass
     d_velocity_y = force_y / config.mass
-    print(angle_of_attack)
-    return Velocity(d_velocity_y, d_velocity_x)
+    return Velocity(d_velocity_x, d_velocity_y)

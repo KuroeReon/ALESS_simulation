@@ -6,10 +6,10 @@ def read_config():
     drag_coefficient = 0.5
     air_density = 1.3
     wings_area = 0.02
-    cross_sectional_area = 0.00001
+    cross_sectional_area = 0.0001
     mass = 0.005
-    ini_speed = 2
-    ini_angle_of_attack = 3.14 / 6
+    ini_speed = 100
+    ini_angle_of_attack = 0
     max_t = 1
     dt = 0.01
     return Config(gravity, lift_coefficient, drag_coefficient, air_density, wings_area,

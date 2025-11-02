@@ -41,7 +41,7 @@ def run_position_simulation():
     positions = []
     position = Position(distance=0, height=2)
     positions.append(position)
-    while t < max_t:
+    while t < max_t and position.height > 0:
         position = runge_kutta_position(derivative_position, positions[-1], t, dt, velocity_x_list, velocity_y_list)
         positions.append(position)
         t += dt

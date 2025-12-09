@@ -1,16 +1,15 @@
 from config import Config
+import math
 
 def read_config():
     gravity = 9.8
-    lift_coefficient = 0.5
-    drag_coefficient = 0.5
     air_density = 1.3
-    wings_area = 0.02
-    cross_sectional_area = 0.01
-    mass = 0.05
-    ini_speed = 2
-    ini_angle_of_attack = 0
-    max_t = 1
+    wings_area = 0.0094111
+    mass = 0.050
+    ini_speed = 2.9098 #small
+    #middleだと2.50446
+    ini_angle_of_attack = math.pi / 6
+    max_t = 100
     dt = 0.01
-    return Config(gravity, lift_coefficient, drag_coefficient, air_density, wings_area,
-                  cross_sectional_area, mass, ini_speed, ini_angle_of_attack, max_t, dt)
+    return Config(gravity, air_density, wings_area,
+                  mass, ini_speed, ini_angle_of_attack, max_t, dt)

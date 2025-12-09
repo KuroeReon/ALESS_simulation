@@ -1,4 +1,5 @@
 import numpy as np
+import math
 
 class Velocity:
     def __init__(self, velocity_x, velocity_y):
@@ -30,10 +31,10 @@ def angle_of_attack(velocity):
     return np.arctan(velocity.velocity_y / velocity.velocity_x)
 
 def lift_force(velocity, config):
-    return 0.5 * config.air_density * (np.linalg.norm(velocity_vector(velocity)) ** 2) * config.wings_area * config.lift_coefficient
+    return 0.5 * config.air_density * (np.linalg.norm(velocity_vector(velocity)) ** 2) * config.wings_area * 2 * math.pi * abs(angle_of_attack(velocity))
 
 def drag(velocity, config):
-    return 0.5 * config.air_density * (np.linalg.norm(velocity_vector(velocity)) ** 2) * config.cross_sectional_area * config.drag_coefficient
+    return 0.5 * config.air_density * (np.linalg.norm(velocity_vector(velocity)) ** 2) * config.wings_area * abs(velocity.velocity_y / velocity.velocity_x)
 
 def derivative_velocity(velocity, config):
     force_x = - lift_force(velocity, config) * np.sin(angle_of_attack(velocity)) - drag(velocity, config) * np.cos(angle_of_attack(velocity))

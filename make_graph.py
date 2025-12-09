@@ -8,7 +8,7 @@ def make_graph(velocities, positions):
 
     plt.figure(figsize=(10, 6))
 
-    plt.subplot(3, 1, 1)
+    """plt.subplot(3, 1, 1)
     plt.plot(times, [velocity.velocity_x for velocity in velocities], label="Velocity_X")
     plt.grid(True)
     plt.legend()
@@ -16,9 +16,9 @@ def make_graph(velocities, positions):
     plt.subplot(3, 1, 2)
     plt.plot(times, [velocity.velocity_y for velocity in velocities], label="Velocity_Y")
     plt.grid(True)
-    plt.legend()
+    plt.legend()"""
 
-    plt.subplot(3, 1, 3)
+    #plt.subplot(3, 1, 3)
     plt.plot([position.distance for position in positions], [position.height for position in positions], label="Position")
     plt.grid(True)
     plt.legend()

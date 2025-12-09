@@ -18,5 +18,3 @@ def run_velocity_simulation():
         velocities.append(velocity)
         t += dt
     return velocities
-
-print(run_velocity_simulation())

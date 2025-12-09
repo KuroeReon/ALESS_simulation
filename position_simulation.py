@@ -37,14 +37,16 @@ def derivative_position(t, dt, velocity_x_list, velocity_y_list):
 def run_position_simulation():
     t = 0
     dt = 0.01
-    max_t = 1
+    max_t = 2
     positions = []
-    position = Position(distance=0, height=2)
+    position = Position(distance=0, height=0)
     positions.append(position)
-    while t < max_t and position.height > 0:
+    while t < max_t:
         position = runge_kutta_position(derivative_position, positions[-1], t, dt, velocity_x_list, velocity_y_list)
         positions.append(position)
         t += dt
-    return positions
 
-print(run_position_simulation())
+    for position in positions:
+        print(position.distance, ",", position.height)
+
+    return positions
